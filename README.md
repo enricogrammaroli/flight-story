@@ -16,18 +16,16 @@ Made for **LIS 2188, Module 9.2: Telling Stories with Data**.
 
 | Path | Contents |
 |---|---|
-| `index.html` | The interactive page: globe with playback, timeline, four route seasons, whereabouts calendar, data table |
+| `index.html` | The interactive page: globe with playback, timeline, four route seasons, data table |
 | `data/Flights_DataTable_Rev.xlsx` | Original flight log (35 rows) |
 | `data/flights.csv`, `data/flights.json` | Same data plus a `km` column (great-circle distance, haversine formula) |
-| `images/` | Static images for sharing |
-
-![Where the days went](images/where-the-days-went.png)
+| `images/` | Static image for sharing |
 
 ## Method and limits
 
 - Journeys are consecutive legs that end in Pittsburgh or Rome. Each journey is coloured by the North American airport it passes through.
 - Distances are straight great-circle lines between airports, not the paths the aircraft actually flew.
-- The log has no link between Cluj-Napoca (5 Oct 2026) and Athens (28 Oct 2026), so those days show as "not in the log".
+- The log has no link between Cluj-Napoca (5 Oct 2026) and Athens (28 Oct 2026), and that gap is noted on the page.
 - The last three flights (28–31 Oct 2026) were still bookings when the page was made.
 - No emissions figure is given, because cabin class and aircraft type aren't recorded.
 

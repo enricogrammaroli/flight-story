@@ -19,7 +19,7 @@
 html{color-scheme:light}
 
 /* Layout: night-flight departure board on top, a live globe as the centrepiece,
-   then a timeline strip, a whereabouts calendar and a "reading the story" coda. */
+   then a timeline strip, season cards and a "reading the story" coda. */
 :root{
   --bg:#f3f5f7; --panel:#ffffff; --ink:#0e1620; --ink-2:#3d4a57; --muted:#6a7784; --rule:#d7dee5;
   --ocean:#e4ebf1; --land:#c4cfd9; --border-c:#f3f5f7; --grat:#d3dce4;
@@ -61,7 +61,7 @@ button{font:inherit;color:inherit}
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:end}
 .hero h1{font-family:var(--f-display);font-weight:900;font-size:clamp(46px,7.4vw,96px);line-height:.88;letter-spacing:-.005em;text-transform:uppercase;margin-top:10px}
 .hero h1 em{font-style:normal;color:var(--muted)}
-.dek{margin-top:18px;max-width:58ch;color:var(--ink-2);font-size:16.5px}
+.dek{margin-top:14px;max-width:58ch;color:var(--ink-2);font-size:16.5px}
 .board{background:var(--board);border-radius:10px;padding:16px 16px 14px;display:grid;gap:10px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset}
 .board-row{display:flex;gap:4px;flex-wrap:nowrap;justify-content:space-between}
 .flap{position:relative;flex:1 1 0;min-width:0;aspect-ratio:.72;max-width:52px;background:#1d252e;border-radius:4px;display:grid;place-items:center;
@@ -145,25 +145,6 @@ h2{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,3.6vw,42px)
 .chap .sws{display:flex;gap:4px}
 .chap .sws i{height:4px;flex:1;border-radius:2px}
 
-/* ---------- calendar ---------- */
-.cal-grid{display:grid;grid-template-columns:62px minmax(0,1fr);gap:4px 10px;align-items:center}
-.cal-m{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.cal-row{display:grid;grid-template-columns:repeat(31,minmax(0,1fr));gap:2px}
-.day{aspect-ratio:1;border-radius:2px;position:relative;min-width:0}
-.day.out{background:transparent}
-.day.travel::after{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--bg)}
-.day.planned{opacity:.55}
-.day.gap{background-image:repeating-linear-gradient(135deg,var(--p-gap) 0 2px,transparent 2px 5px)!important;background-color:transparent!important;outline:1px solid var(--p-gap);outline-offset:-1px}
-.day.today{box-shadow:0 0 0 1.5px var(--ink)}
-.cal-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
-.cal-legend{display:grid;gap:10px}
-.cl-item{display:grid;grid-template-columns:16px 1fr auto;gap:10px;align-items:center;font-size:14px}
-.cl-item .sq{width:16px;height:16px;border-radius:3px}
-.cl-item .n{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.bar{display:flex;height:12px;border-radius:3px;overflow:hidden;gap:2px;margin-top:4px}
-.bar span{display:block;height:100%}
-.small{font-size:12.5px;color:var(--muted)}
-
 /* ---------- coda ---------- */
 .coda{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;border-top:1px solid var(--rule);padding-top:26px}
 .coda h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
@@ -189,7 +170,6 @@ td.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-n
   .hero{grid-template-columns:1fr}
   .stage{grid-template-columns:1fr}
   .chapters{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cal-wrap{grid-template-columns:1fr}
   .coda{grid-template-columns:1fr}
 }
 @media (max-width:560px){
@@ -197,8 +177,6 @@ td.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-n
   .stat:nth-child(3){border-left:0}
   .stat:nth-child(n+3){border-top:1px solid var(--rule)}
   .chapters{grid-template-columns:1fr}
-  .cal-grid{grid-template-columns:44px minmax(0,1fr)}
-  .cal-row{gap:1px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -211,7 +189,8 @@ td.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-n
     <div>
       <div class="eyebrow">A change story · LIS 2188 · Module 9.2</div>
       <h1>Same commute,<br><em>different</em> doors</h1>
-      <p class="dek">Thirteen months of flights between Pittsburgh and Rome. The two ends of the trip never change. The door across the Atlantic changes every season: Toronto, then Atlanta, then Chicago and Newark, and finally a turn east toward Cluj-Napoca and Istanbul.</p>
+      <p class="dek">In the past 18 months, for work and research projects, I have taken an unprecedented number of flights. For this part of the 2188 class activities, I worked with data from these flights, and from the start I wanted to play with it and present it as a visualization on a map.</p>
+      <p class="dek">In this way, I realized that this looks like a sort of commute over the Atlantic that brings to the same cities, passing through a lot of others.</p>
     </div>
     <div class="board" aria-label="Departure board: Pittsburgh to Rome">
       <div class="board-meta"><span>Flight log</span><span><b>Sep 2025 – Oct 2026</b></span></div>
@@ -270,18 +249,6 @@ td.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-n
     <div class="chapters" id="chapters"></div>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="eyebrow">The near view</span>
-      <h2>Where the days went</h2>
-      <p>Distance is the far view. This is the near one: every day from the first flight to the last, coloured by where the night was spent according to the log. A dot marks a travel day.</p>
-    </div>
-    <div class="cal-wrap">
-      <div class="cal-grid" id="cal"></div>
-      <div class="cal-legend" id="calLegend"></div>
-    </div>
-  </section>
-
   <section class="coda" aria-label="About this data story">
     <div>
       <h3>The essential questions</h3>
@@ -291,14 +258,14 @@ td.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-n
         <dt>What</dt><dd>A personal flight log: 35 legs, airports, carriers and coordinates.</dd>
         <dt>When</dt><dd>9 Sep 2025 to 31 Oct 2026.</dd>
         <dt>Where</dt><dd>Pittsburgh and Rome, with 13 other airports in between.</dd>
-        <dt>How</dt><dd>Great-circle arcs on a globe, a timeline and a day-by-day calendar.</dd>
+        <dt>How</dt><dd>Great-circle arcs on a globe, a timeline and four season cards.</dd>
       </dl>
     </div>
     <div>
       <h3>What the data cannot tell</h3>
       <ul>
         <li>Why each route was chosen: price, schedule, loyalty programme or a specific trip purpose.</li>
-        <li>How Cluj-Napoca (5 Oct) connects to Athens (28 Oct). That leg is missing, so those days are hatched.</li>
+        <li>How Cluj-Napoca (5 Oct) connects to Athens (28 Oct). That leg is missing from the log.</li>
         <li>Departure times, delays, ground travel and layover length.</li>
         <li>Distances are straight great-circle lines, not the paths the aircraft flew.</li>
         <li>Emissions: no CO₂ figure is shown, because cabin class and aircraft type are not in the log.</li>
@@ -561,45 +528,6 @@ const chaps=d3.select("#chapters").selectAll("button").data(CH).join("button").a
    tweenView([-ctr[0],-ctr[1]*0.85,0],home.scale*1.12,800);
    document.querySelector(".stage").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
  });
-
-// ---- calendar (whereabouts)
-const start=parse("2025-09-09"), end=parse("2026-10-31");
-const byDate=d3.group(legs,l=>l.date);
-let loc="PIT", lastArr=null; const days=[];
-const dk=d3.utcFormat("%Y-%m-%d");
-// find gap: a leg whose origin differs from current location
-let gapFrom=null,gapTo=null; {let c="PIT",prevD=null;legs.forEach(l=>{if(l.from!==c){gapFrom=d3.utcDay.offset(prevD,1);gapTo=d3.utcDay.offset(l.d,-1);}c=l.to;prevD=l.d;});}
-for(let d=start;d<=end;d=d3.utcDay.offset(d,1)){
-  const k=dk(d), todays=byDate.get(k)||[];
-  if(todays.length)loc=todays[todays.length-1].to;
-  const gap=gapFrom&&d>=gapFrom&&d<=gapTo;
-  const cat=gap?"gap":loc==="PIT"?"pit":loc==="FCO"?"rome":"else";
-  days.push({d,k,cat,loc,travel:todays.length>0,legs:todays,planned:k>TODAY});
-}
-const CAT={pit:{l:"Pittsburgh",v:"--p-pit"},rome:{l:"Rome",v:"--p-rome"},else:{l:"Elsewhere (Toronto, Amsterdam, Edinburgh, Cluj-Napoca…)",v:"--p-else"},gap:{l:"Not in the log",v:"--p-gap"}};
-const months=d3.utcMonths(d3.utcMonth.floor(start),d3.utcMonth.offset(d3.utcMonth.floor(end),1));
-const cal=d3.select("#cal");
-months.forEach(mo=>{
-  cal.append("div").attr("class","cal-m").text(d3.utcFormat("%b %y")(mo));
-  const row=cal.append("div").attr("class","cal-row");
-  for(let i=1;i<=31;i++){
-    const dd=new Date(Date.UTC(mo.getUTCFullYear(),mo.getUTCMonth(),i));
-    const rec=dd.getUTCMonth()===mo.getUTCMonth()?days.find(x=>x.k===dk(dd)):null;
-    const cell=row.append("div").attr("class","day"+(rec?"":" out"));
-    if(rec){cell.classed("travel",rec.travel).classed("planned",rec.planned).classed("gap",rec.cat==="gap").classed("today",rec.k===TODAY)
-      .style("background",`var(${CAT[rec.cat].v})`)
-      .on("pointermove",e=>{tip.hidden=false;const nm=apMap.get(rec.loc);
-        tip.innerHTML=`<b>${fDay(rec.d)}</b>${rec.planned?' <span class="s">· booked</span>':""}<br>${rec.cat==="gap"?"Not recorded (last seen Cluj-Napoca)":"Night in "+(nm?nm.city:rec.loc)}${rec.legs.length?'<br><span class="s">'+rec.legs.map(l=>l.from+"→"+l.to+" "+l.no).join(", ")+"</span>":""}`;
-        tip.style.left=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8)+"px";tip.style.top=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-8)+"px";})
-      .on("pointerleave",hideTip);}
-  }
-});
-const counts=d3.rollup(days,v=>v.length,d=>d.cat), tot=days.length;
-const cl=d3.select("#calLegend");
-cl.append("div").attr("class","eyebrow").text(`${tot} days, 9 Sep 2025 – 31 Oct 2026`);
-cl.append("div").attr("class","bar").html(["pit","rome","else","gap"].map(k=>`<span style="width:${(counts.get(k)||0)/tot*100}%;background:var(${CAT[k].v})"></span>`).join(""));
-["pit","rome","else","gap"].forEach(k=>cl.append("div").attr("class","cl-item").html(`<span class="sq" style="background:var(${CAT[k].v})${k==="gap"?";background:repeating-linear-gradient(135deg,var(--p-gap) 0 2px,transparent 2px 5px);outline:1px solid var(--p-gap);outline-offset:-1px":""}"></span><span>${CAT[k].l}</span><span class="n">${counts.get(k)||0} d · ${Math.round((counts.get(k)||0)/tot*100)}%</span>`));
-cl.append("p").attr("class","small").html(`Dot = a day with at least one flight (${days.filter(d=>d.travel).length} days). Faded cells after 24 Oct are booked, not lived. Pittsburgh is the base: ${Math.round(counts.get("pit")/tot*100)}% of nights. Rome comes in stays of one to three weeks. The hatched block is the missing Cluj-Napoca → Athens link.`);
 
 // ---- table
 d3.select("#tbl tbody").selectAll("tr").data(legs).join("tr").html(l=>`<td class="mono">${l.date}${l.planned?" *":""}</td><td>${l.fromCity} (${l.from})</td><td>${l.toCity} (${l.to})</td><td class="mono">${l.no}</td><td>${l.carrier}</td><td>${GW[l.gw].label}</td><td class="num">${fmt(l.km)}</td>`);
