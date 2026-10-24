@@ -1,0 +1,36 @@
+date,from_airport,to_airport,flight_no,carrier,departure_lat,departure_lon,arrival_lat,arrival_lon,km
+2025-09-09,Pittsburgh (PIT),Montreal (YUL),AC8586,Air Canada Express (Jazz),40.4915,-80.2329,45.4706,-73.7408,765
+2025-09-09,Montreal (YUL),Rome (FCO),AC892,Air Canada,45.4706,-73.7408,41.8003,12.2389,6584
+2025-09-15,Rome (FCO),Toronto (YYZ),AC891,Air Canada,41.8003,12.2389,43.6777,-79.6248,7085
+2025-09-15,Toronto (YYZ),Pittsburgh (PIT),AC8927,Air Canada Express (Jazz),43.6777,-79.6248,40.4915,-80.2329,358
+2025-10-15,Pittsburgh (PIT),Toronto (YYZ),AC8926,Air Canada Express (Jazz),40.4915,-80.2329,43.6777,-79.6248,358
+2025-10-15,Toronto (YYZ),Amsterdam (AMS),AC808,Air Canada,43.6777,-79.6248,52.3105,4.7683,5989
+2025-10-20,Amsterdam (AMS),Frankfurt (FRA),LH993,Lufthansa,52.3105,4.7683,50.0379,8.5622,366
+2025-10-20,Frankfurt (FRA),Rome (FCO),LH5148,ITA Airways (for Lufthansa),50.0379,8.5622,41.8003,12.2389,959
+2025-10-23,Rome (FCO),Toronto (YYZ),AC891,Air Canada,41.8003,12.2389,43.6777,-79.6248,7085
+2025-10-23,Toronto (YYZ),Pittsburgh (PIT),AC8927,Air Canada Express (Jazz),43.6777,-79.6248,40.4915,-80.2329,358
+2026-03-01,Pittsburgh (PIT),Atlanta (ATL),DL1345,Delta Air Lines,40.4915,-80.2329,33.6407,-84.4277,848
+2026-03-01,Atlanta (ATL),Rome (FCO),KL6001,KLM,33.6407,-84.4277,41.8003,12.2389,8085
+2026-03-15,Rome (FCO),Atlanta (ATL),KL6090,KLM,41.8003,12.2389,33.6407,-84.4277,8085
+2026-03-15,Atlanta (ATL),Pittsburgh (PIT),DL1351,Delta Air Lines,33.6407,-84.4277,40.4915,-80.2329,848
+2026-04-12,Pittsburgh (PIT),Atlanta (ATL),KL5457,KLM (partner-operated),40.4915,-80.2329,33.6407,-84.4277,848
+2026-04-12,Atlanta (ATL),Rome (FCO),KL6001,KLM,33.6407,-84.4277,41.8003,12.2389,8085
+2026-04-27,Rome (FCO),Detroit (DTW),KL6110,KLM,41.8003,12.2389,42.2162,-83.3554,7427
+2026-04-27,Detroit (DTW),Pittsburgh (PIT),KL5766,KLM (partner-operated),42.2162,-83.3554,40.4915,-80.2329,324
+2026-06-07,Pittsburgh (PIT),Chicago (ORD),UA2180,United Airlines,40.4915,-80.2329,41.9742,-87.9073,662
+2026-06-07,Chicago (ORD),Edinburgh (EDI),UA118,United Airlines,41.9742,-87.9073,55.95,-3.3725,5957
+2026-06-12,Edinburgh (EDI),Rome (FCO),LS3915,Jet2,55.95,-3.3725,41.8003,12.2389,1934
+2026-06-21,Rome (FCO),Newark (EWR),UA41,United Airlines,41.8003,12.2389,40.6895,-74.1745,6891
+2026-06-21,Newark (EWR),Pittsburgh (PIT),UA3447,Republic Airways (United Express),40.6895,-74.1745,40.4915,-80.2329,512
+2026-07-18,Pittsburgh (PIT),Chicago (ORD),UA455,United Airlines,40.4915,-80.2329,41.9742,-87.9073,662
+2026-07-18,Chicago (ORD),Rome (FCO),UA970,United Airlines,41.9742,-87.9073,41.8003,12.2389,7742
+2026-07-29,Rome (FCO),Newark (EWR),UA41,United Airlines,41.8003,12.2389,40.6895,-74.1745,6891
+2026-07-29,Newark (EWR),Pittsburgh (PIT),UA3447,Republic Airways (United Express),40.6895,-74.1745,40.4915,-80.2329,512
+2026-09-09,Pittsburgh (PIT),Toronto (YYZ),AC8920,Air Canada Express (Jazz),40.4915,-80.2329,43.6777,-79.6248,358
+2026-09-09,Toronto (YYZ),Warsaw (WAW),LO42,LOT Polish Airlines,43.6777,-79.6248,52.1657,20.9671,6934
+2026-09-10,Warsaw (WAW),Cluj-Napoca (CLJ),LO653,LOT Polish Airlines,52.1657,20.9671,46.7852,23.6862,630
+2026-09-13,Cluj-Napoca (CLJ),Rome (FCO),W4 3385,Wizz Air,46.7852,23.6862,41.8003,12.2389,1065
+2026-10-05,Rome (FCO),Cluj-Napoca (CLJ),W4 3386,Wizz Air,41.8003,12.2389,46.7852,23.6862,1065
+2026-10-28,Athens (ATH),Istanbul (IST),TK1846,Turkish Airlines,37.9364,23.9445,41.2753,28.7519,554
+2026-10-29,Istanbul (IST),Chicago (ORD),TK185,Turkish Airlines,41.2753,28.7519,41.9742,-87.9073,8786
+2026-10-31,Chicago (ORD),Pittsburgh (PIT),UA1946,United Airlines,41.9742,-87.9073,40.4915,-80.2329,662
